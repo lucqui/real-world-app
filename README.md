@@ -10,7 +10,7 @@ To start the application with docker-compose:
 ```
  gradle build docker -is && docker-compose up
 ```
-This command will start 3 service: MySQL database, spring-boot demo application (on port 8080) and adminer (on port 8081)  
+This command will start 3 services: MySQL database, the spring-boot demo application (on port 8080) and adminer (on port 8081)  
 
 Save data:
 ```
