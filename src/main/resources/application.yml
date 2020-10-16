@@ -1,0 +1,23 @@
+spring:
+  flyway:
+    enabled: true
+    validate-on-migrate: off
+  servlet.multipart.enabled: true
+  datasource:
+    url: jdbc:mysql://mysql/fun_docker
+    username: fun_docker
+    password: fun_docker
+  jpa:
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+
+---
+
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:h2:mem:testdb
+#    driverClassName: org.h2.Driver
+    username: sa
+    password: password

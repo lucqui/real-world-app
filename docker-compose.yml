@@ -1,0 +1,29 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: mysql:8.0.21
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: "fun_docker"
+      MYSQL_USER: "fun_docker"
+      MYSQL_PASSWORD: "fun_docker"
+    volumes:
+    - mysql_data:/var/lib/mysql
+    ports:
+      - "3306"
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+  fun-docker:
+    image: com.lsq/real-world-application:0.1
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - 8080:8080
+volumes:
+  mysql_data:

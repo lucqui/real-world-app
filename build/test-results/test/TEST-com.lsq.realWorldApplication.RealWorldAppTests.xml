@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.lsq.realWorldApplication.RealWorldAppTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-16T21:37:29" hostname="iMac.local" time="0.003">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.lsq.realWorldApplication.RealWorldAppTests" time="0.003"/>
+  <system-out><![CDATA[2020-10-16 15:37:28.545  INFO 37656 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.lsq.realWorldApplication.RealWorldAppTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-10-16 15:37:28.551  INFO 37656 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-10-16 15:37:28.552  INFO 37656 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@b583963e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@c0e647e4, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3af86ba6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@8eeb0ab0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5e254854, org.springframework.test.context.transaction.TransactionalTestExecutionListener@bff69184, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@d457e136, org.springframework.test.context.event.EventPublishingTestExecutionListener@fd5c1dda, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@f209f820, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3840e86c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@c2b1c564, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@fa984e45, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@b69ac87b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3e517299]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.4.RELEASE)
+
+2020-10-16 15:37:28.603  INFO 37656 --- [    Test worker] c.l.r.RealWorldAppTests                  : Starting RealWorldAppTests on iMac.local with PID 37656 (started by lucquitas in /Users/lucquitas/Documents/Development/interviews/boot-docker-fun)
+2020-10-16 15:37:28.603  INFO 37656 --- [    Test worker] c.l.r.RealWorldAppTests                  : No active profile set, falling back to default profiles: default
+2020-10-16 15:37:28.910  INFO 37656 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-16 15:37:28.919  INFO 37656 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 2 JPA repository interfaces.
+2020-10-16 15:37:29.090  INFO 37656 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2020-10-16 15:37:29.132  INFO 37656 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-16 15:37:29.147  INFO 37656 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-16 15:37:29.152  INFO 37656 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-16 15:37:29.167  INFO 37656 --- [    Test worker] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:testdb (H2 1.4)
+2020-10-16 15:37:29.176  INFO 37656 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.005s)
+2020-10-16 15:37:29.181  INFO 37656 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" with baseline ...
+2020-10-16 15:37:29.191  INFO 37656 --- [    Test worker] o.f.core.internal.command.DbBaseline     : Successfully baselined schema with version: 1
+2020-10-16 15:37:29.198  INFO 37656 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": 1
+2020-10-16 15:37:29.207  INFO 37656 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1.0 - Create Invoice Table
+2020-10-16 15:37:29.210  INFO 37656 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-16 15:37:29.212  INFO 37656 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-16 15:37:29.222  INFO 37656 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "PUBLIC" (execution time 00:00.030s)
+2020-10-16 15:37:29.413  WARN 37656 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-16 15:37:29.859  INFO 37656 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-16 15:37:29.942  INFO 37656 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-16 15:37:29.950  INFO 37656 --- [    Test worker] c.l.r.RealWorldAppTests                  : Started RealWorldAppTests in 1.373 seconds (JVM running for 7.459)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
