@@ -27,6 +27,7 @@ import java.util.UUID;
 public class Invoice {
 
     @Id
+//    @GeneratedValue
     String id = UUID.randomUUID().toString();
 
     String supplierId;
