@@ -14,7 +14,7 @@ This command will start 3 service: MySQL database, spring-boot demo application 
 
 Save data:
 ```
-curl -v -F key1=file -F file=@csv/invoice_data_1.csv http://localhost:8080/invoice/digest
+curl -v -F file=@csv/invoice_data_1.csv http://localhost:8080/invoice/digest
 ```
 
 View supplier invoice summary data:

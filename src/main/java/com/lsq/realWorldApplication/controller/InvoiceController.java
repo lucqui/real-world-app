@@ -30,4 +30,14 @@ public class InvoiceController {
         return new BasicResponse<SupplierSummaryEntry>(informationService.getSupplierSummary());
     }
 
+    @GetMapping("/summary")
+    public BasicResponse getInvoiceSummaries() {
+        return new BasicResponse(true, "Not yet implemented.");
+    }
+
+    @GetMapping("/payment/summary")
+    public BasicResponse getPaymentSummaries() {
+        return new BasicResponse(true, "Not yet implemented.");
+    }
+
 }
