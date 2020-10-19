@@ -38,9 +38,13 @@ public class InvoiceDigestor {
             return new BasicResponse(false, ex.getMessage());
         }
 
-        invoices.forEach( inv -> {
-            invoiceProcessor.process(inv);
-        });
+        try {
+            invoices.forEach( inv -> {
+                invoiceProcessor.process(inv);
+            });
+        } catch (Exception ex) {
+            System.out.println("Exception thrown: " + ex.getMessage());
+        }
 
         return new BasicResponse(true);
     }

@@ -1,8 +1,11 @@
 package com.lsq.realWorldApplication.external;
 
-public class BasicResponse {
-    Boolean success;
-    String message;
+import java.util.List;
+
+public class BasicResponse<T> {
+    public Boolean success;
+    public String message;
+    public List<T> data;
 
     public BasicResponse(Boolean success) {
         this.success = success;
@@ -12,4 +15,11 @@ public class BasicResponse {
         this.success = success;
         this.message = msg;
     }
+
+    public BasicResponse(List<T> data) {
+        this.success = true;
+        this.message = "Found " + data.size() + " entries.";
+        this.data = data;
+    }
+
 }

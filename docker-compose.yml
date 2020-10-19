@@ -9,10 +9,10 @@ services:
       MYSQL_DATABASE: "fun_docker"
       MYSQL_USER: "fun_docker"
       MYSQL_PASSWORD: "fun_docker"
-    volumes:
-    - mysql_data:/var/lib/mysql
+#    volumes:
+#    - mysql_data:/var/lib/mysql ##if wanting to persist state
     ports:
-      - "3306"
+      - 3307:3306 #toLocal:inContainer
   adminer:
     image: adminer
     restart: always
@@ -25,5 +25,6 @@ services:
       - mysql
     ports:
       - 8080:8080
-volumes:
-  mysql_data:
+      - 4000:4000
+#volumes:
+#  mysql_data:

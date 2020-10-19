@@ -2,11 +2,28 @@ package com.lsq.realWorldApplication.repository;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
 @Table(name = "invoice")
+@SqlResultSetMapping(
+        name="totalsBySupplier",
+        classes = @ConstructorResult(
+                targetClass = TotalsBySupplier.class,
+                columns={
+                        @ColumnResult(name="invoiceStatus", type=String.class),
+                        @ColumnResult(name="supplierId", type=String.class),
+                        @ColumnResult(name="count", type= BigInteger.class),
+                        @ColumnResult(name="totalAmount", type=BigDecimal.class)
+                }))
+@NamedNativeQuery(
+        name="getTotalsBySupplierIdList",
+        query="select supplier_id as supplierId, sum(1) as count, status as invoiceStatus, sum(amount) as totalAmount from invoice group by supplier_id, status order by supplier_id limit 1000",
+        resultSetMapping = "totalsBySupplier",
+        resultClass = TotalsBySupplier.class
+)
 public class Invoice {
 
     @Id
