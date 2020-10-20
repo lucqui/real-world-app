@@ -21,4 +21,9 @@ View supplier invoice summary data:
 curl -v -X GET  http://localhost:8080/invoice/supplier/summary
 ```
 
+View invoice summary data:
+```
+curl -v -X GET  http://localhost:8080/invoice/summary
+```
+
 I added some extra Sunday night. Use the previous commit for evaluation.
