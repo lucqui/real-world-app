@@ -98,7 +98,6 @@ public class InvoiceDigestor {
 
     protected String nullSafeAccessor(String[] data, int idx) {
         try {
-            System.out.println(data + ", " + idx +", value: [" + data[idx] + "]");
             return data[idx].trim();
         } catch(ArrayIndexOutOfBoundsException ex) {
             return "";

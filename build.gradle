@@ -35,6 +35,7 @@ dependencies {
 	testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
 	compile group: 'org.test4j', name: 'test4j.core', version: '2.0.5'
 	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
+	compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1.1'
 }
 
 test {
