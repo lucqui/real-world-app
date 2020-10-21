@@ -1,6 +1,7 @@
 package com.lsq.realWorldApplication.service;
 
 import com.lsq.realWorldApplication.external.InvoiceSummaryEntry;
+import com.lsq.realWorldApplication.external.PaymentSummaryEntry;
 import com.lsq.realWorldApplication.external.SupplierSummaryEntry;
 import com.lsq.realWorldApplication.repository.Invoice;
 import com.lsq.realWorldApplication.repository.InvoiceRepo;
@@ -28,6 +29,10 @@ public class InvoiceInformationService {
     public List<InvoiceSummaryEntry> getInvoiceSummary(Integer pageSize, Integer page) {
         List<Invoice> invoices = invoiceRepo.findAll(PageRequest.of(page, pageSize)).getContent();
         return InvoiceSummaryEntryConverter.convertToInvoiceSummaryList(invoices);
+    }
+
+    public List<PaymentSummaryEntry> getPayments() {
+        return invoiceRepo.getPaymentsList();
     }
 
 }

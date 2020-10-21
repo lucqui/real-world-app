@@ -1,5 +1,7 @@
 package com.lsq.realWorldApplication.repository;
 
+import com.lsq.realWorldApplication.external.PaymentSummaryEntry;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -23,6 +25,24 @@ import java.util.UUID;
         query="select supplier_id as supplierId, sum(1) as count, status as invoiceStatus, sum(amount) as totalAmount from invoice group by supplier_id, status order by supplier_id limit 1000",
         resultSetMapping = "totalsBySupplier",
         resultClass = TotalsBySupplier.class
+)
+@SqlResultSetMapping(
+        name="paymentSummary",
+        classes = @ConstructorResult(
+        targetClass = PaymentSummaryEntry.class,
+                columns = {
+                        @ColumnResult(name="supplierId", type=String.class),
+                        @ColumnResult(name="paymentDate", type=LocalDate.class),
+                        @ColumnResult(name="paymentAmount", type=BigDecimal.class),
+                        @ColumnResult(name="numberOfInvoicesPaid", type=Integer.class)
+                }
+        )
+)
+@NamedNativeQuery(
+        name="getPaymentsList",
+        query="select supplier_id as supplierId, payment_date as paymentDate, sum(amount) as paymentAmount, sum(1) as numberOfInvoicesPaid from invoice group by supplier_id, payment_date order by paymentDate desc",
+        resultSetMapping = "paymentSummary",
+        resultClass = PaymentSummaryEntry.class
 )
 public class Invoice {
 

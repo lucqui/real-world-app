@@ -2,6 +2,7 @@ package com.lsq.realWorldApplication.controller;
 
 import com.lsq.realWorldApplication.external.BasicResponse;
 import com.lsq.realWorldApplication.external.InvoiceSummaryEntry;
+import com.lsq.realWorldApplication.external.PaymentSummaryEntry;
 import com.lsq.realWorldApplication.external.SupplierSummaryEntry;
 import com.lsq.realWorldApplication.service.InvoiceDigestor;
 import com.lsq.realWorldApplication.service.InvoiceInformationService;
@@ -39,8 +40,8 @@ public class InvoiceController {
     }
 
     @GetMapping("/payment/summary")
-    public BasicResponse getPaymentSummaries() {
-        return new BasicResponse(true, "Not yet implemented.");
+    public BasicResponse<PaymentSummaryEntry> getPaymentSummaries() {
+        return new BasicResponse(informationService.getPayments());
     }
 
 }
